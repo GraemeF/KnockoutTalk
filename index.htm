@@ -12,6 +12,12 @@
             text-align: center;
             font-size: 70px;
         }
+
+        #Cover H3 {
+            color: #FFF;
+            text-align: center;
+            font-size: 40px;
+        }
     </style>
 </head>
 <body class="list">
@@ -23,22 +29,15 @@
     <p>Graeme Foster</p>
 </header>
 
-<div class="slide" id="titleSlide">
+<div class="slide bg" id="Cover">
     <div>
         <section>
-            <div style="float: left;">
-                <header>
-                    <h2>What is KnockoutJS?</h2>
-                </header>
-                <ul>
-                    <li>MVVM for your web browser</li>
-                    <li>Bind UI elements to your models</li>
-                </ul>
-            </div>
-            <div style="float:right;">
-                <img src="http://substance-assets.s3.amazonaws.com/f9/c36a064d265cb7d4981cfa5ae96063/CatBoxing.png"
-                     alt="">
-            </div>
+            <header>
+                <h2>Rock out with your <img src="pictures/ko-logo.png"/></h2>
+            </header>
+            <div class="progress" style="border-width: 0; text-align: center">
+                <code>Graeme Foster &bullet; @GraemeF &bullet; graemef@gmail.com</code></div>
+            <img src="pictures/main-background.jpg" class="fullslide" alt="">
         </section>
     </div>
 </div>
@@ -70,9 +69,9 @@
             <ul>
                 <li>Model – View – ViewModel
                     <ul>
-                        <li>Model: Your domain object</li>
-                        <li>View: DOM elements that present your model</li>
-                        <li>ViewModel: Maps between Model and View using binding</li>
+                        <li><strong>Model</strong><br/>Your domain object</li>
+                        <li><strong>View</strong><br/>DOM elements that present your model</li>
+                        <li><strong>ViewModel</strong><br/>Maps between Model and View using binding</li>
                     </ul>
                 </li>
             </ul>
@@ -85,12 +84,34 @@
             <header>
                 <h2>Why care?</h2>
             </header>
+            <blockquote cite="KnockoutJS.com">By encapsulating data and behavior into a view model, you get a clean,
+                extensible foundation on which to build sophisticated UIs without getting lost in a tangle of event
+                handlers and manual DOM updates.
+            </blockquote>
+        </section>
+    </div>
+</div>
+<div class="slide" id="slide2.1">
+    <div>
+        <section>
+            <header>
+                <h2>Why care?</h2>
+            </header>
             <ul>
                 <li>Separation of concerns</li>
                 <li>Testability</li>
                 <li>Events? What events?</li>
                 <li>Familiarity, at least for me!</li>
             </ul>
+        </section>
+    </div>
+</div>
+<div class="slide shout" id="helloworld1">
+    <div>
+        <section>
+            <header>
+                <h2>SHOW ME<br/>TEH CODEZ</h2>
+            </header>
         </section>
     </div>
 </div>

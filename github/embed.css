@@ -1,3 +1,12 @@
+/* PT Mono */
+@font-face {
+	font-family:'PT Mono';
+	src:local('PT Mono'), local('PTMonoRegular'),
+		url(../fonts/PTMono.woff) format('woff'),
+		url(../fonts/PTMono.ttf) format('truetype'),
+		url(../fonts/PTMono.svg#PTMono) format('svg');
+	}
+
 .gist {
   color: #000;
 }
@@ -9,7 +18,7 @@
 
   .gist .gist-file {
     border: 1px solid #dedede; /* gray */
-    font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+    font-family: "PT Mono", Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
     margin-bottom: 1em;
   }
 
@@ -38,7 +47,7 @@
     }
 
       .gist .gist-file .gist-data pre {
-        font-family: 'Bitstream Vera Sans Mono', 'Courier', monospace;
+        font-family: "PT Mono", 'Bitstream Vera Sans Mono', 'Courier', monospace;
         background: transparent !important;
         margin: 0 !important;
         border: none !important;
