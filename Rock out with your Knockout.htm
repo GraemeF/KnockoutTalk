@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <title>Rock out with your Knockout</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1274, user-scalable=no">
+    <link rel="stylesheet" href="http://letterpress.substance.io/shower/themes/substance/styles/style.css">
+    <style>
+        #Cover H2 {
+            color: #FFF;
+            text-align: center;
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body class="list">
+<script src="knockout-2.0.0.debug.js"></script>
+
+<header class="caption">
+    <h1>Rock out with your Knockout</h1>
+
+    <p>Graeme Foster</p>
+</header>
+
+<div class="slide" id="slide0">
+    <div>
+        <section>
+            <div style="float: left;">
+                <header>
+                    <h2>What is KnockoutJS?</h2>
+                </header>
+                <ul>
+                    <li>MVVM for your web browser</li>
+                    <li>Bind UI elements to your models</li>
+                </ul>
+            </div>
+            <div style="float:right;">
+                <img src="http://substance-assets.s3.amazonaws.com/f9/c36a064d265cb7d4981cfa5ae96063/CatBoxing.png"
+                     alt="">
+            </div>
+        </section>
+    </div>
+</div>
+<div class="slide" id="slide1">
+    <div>
+        <section>
+            <header>
+                <h2>What&apos;s MVVM?</h2>
+            </header>
+            <ul>
+                <li>Model – View – ViewModel
+                    <ul>
+                        <li>Model: Your domain object</li>
+                        <li>View: DOM elements that present your model</li>
+                        <li>ViewModel: Maps between Model and View using binding</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>
+<div class="slide" id="slide2">
+    <div>
+        <section>
+            <header>
+                <h2>Why care?</h2>
+            </header>
+            <ul>
+                <li>Separation of concerns</li>
+                <li>Testability</li>
+                <li>Events? What events?</li>
+                <li>Familiarity, at least for me!</li>
+            </ul>
+        </section>
+    </div>
+</div>
+<div class="slide" id="slide3">
+    <div>
+        <section>
+            <header>
+                <h2>Hello, World &mdash; teh codez</h2>
+            </header>
+            <h4>HTML</h4>
+            <pre><code>&lt;p&gt;Name: &lt;input <strong>data-bind=&quot;value: name&quot;</strong>/&gt;&lt;/p&gt;</code>
+                <code>&lt;h2&gt;Hello, &lt;span <strong>data-bind=&quot;text: name&quot;</strong>&gt; &lt;/span&gt;!&lt;/h2&gt;</code></pre>
+            <h4>JavaScript</h4>
+            <pre><code>var ViewModel = function () {</code>
+                <code> this.name = ko.observable(&quot;&quot;);</code>
+                <code>};</code>
+                <code>ko.applyBindings(new ViewModel());</code></pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="slide4">
+    <div>
+        <section>
+            <header>
+                <h2>Hello, World</h2>
+            </header>
+            <iframe src="HelloWorld.html" ></iframe>
+        </section>
+    </div>
+</div>
+
+<!--
+        To hide progress bar from entire presentation
+        just remove "progress" element.
+        -->
+<div class="progress">
+    <div></div>
+</div>
+<script src="http://letterpress.substance.io/shower/scripts/script.js"></script>
+<!-- Copyright © 2010–2011 Vadim Makeev, http://pepelsbey.net/ -->
+</body>
+</html>

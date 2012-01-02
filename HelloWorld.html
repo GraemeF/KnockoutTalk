@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Say Hello</title>
+    </head>
+    <body>
+        <p>Name: <input data-bind="value: name"/></p>
+        <h2>Hello, <span data-bind="text: name"> </span>!</h2>
+
+        <script src="knockout-2.0.0.debug.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+                var ViewModel = function () {
+                    this.name = ko.observable("");
+                };
+
+                ko.applyBindings(new ViewModel());
+            };
+        </script>
+
+    </body>
+</html>
