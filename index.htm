@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="shower/themes/ribbon/styles/style.css">
     <link rel="stylesheet" href="github/embed.css">
     <style>
+        .slide BLOCKQUOTE:after {
+            margin: 0 0 45px;
+            text-align: right;
+        	display:block;
+        	color:#444;
+        	font-weight:bold;
+        	content:attr(cite);
+        	}
+
+        img.fullslide {
+        	position:absolute;
+        	top:0;
+        	left:0;
+        	z-index:-1;
+        	width:100%;
+        	}
+
         iframe.demo {
             width: 100%;
             height: 50%;
@@ -17,6 +34,18 @@
             -webkit-border-radius:8px;
        		-moz-border-radius:8px;
        		border-radius:8px;
+       	}
+        #Cover .progress.footer {
+       		padding:3px 8px;
+            background:#FAFAA2;
+       		color:#000;
+       		font-style:normal;
+            -webkit-border-radius:8px;
+       		-moz-border-radius:8px;
+       		border-radius:8px;
+            border-width: 0;
+            text-align: center;
+            vertical-align: bottom;
        	}
 
         #Cover H2 {
@@ -30,25 +59,26 @@
             text-align: center;
             font-size: 40px;
         }
+        .progress-off::after {
+        	content:'';
+        	}
     </style>
 </head>
 <body class="list">
-<script src="knockout-2.0.0.debug.js"></script>
 
 <header class="caption">
     <h1>Rock out with your Knockout</h1>
-
     <p>Graeme Foster</p>
 </header>
 
-<div class="slide bg" id="Cover">
+<div class="slide progress-off" id="Cover">
     <div>
         <section>
             <header>
                 <h2>Rock out with your <img src="pictures/ko-logo.png"/></h2>
             </header>
-            <div class="progress" style="border-width: 0; text-align: center">
-                <code>Graeme Foster &bullet; @GraemeF &bullet; graemef@gmail.com</code></div>
+            <div class="progress footer">
+               Graeme Foster &bullet; @GraemeF &bullet; graemef@gmail.com</div>
             <img src="pictures/main-background.jpg" class="fullslide" alt="">
         </section>
     </div>
