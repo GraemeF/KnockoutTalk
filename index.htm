@@ -236,6 +236,13 @@
         </section>
     </div>
 </div>
+<div class="slide bg" id="slide-vm2.2">
+    <div>
+        <section>
+            <img src="pictures/ohnoes.jpg" class="fullslide" alt="">
+        </section>
+    </div>
+</div>
 <div class="slide shout" id="slide-Observables">
     <div>
         <section>
@@ -251,8 +258,36 @@
             <header>
                 <h2>Observables</h2>
             </header>
+            <pre><code>var vm = { name: <mark class="important">new ko.observable("Dougal")</mark>,</code>
+                                <code>           occupation: "Priest" };</code>
+                                <code>ko.applyBindings(vm);</code></pre>
+            <ul class="inner">
+                <comment class="active"></comment>
+                <li>View: <code>&lt;span&gt;Dougal&lt;/span&gt;</code></li>
+                <li>Set the <code>name</code> observable: <code>vm.name("Ted");</code>
+                <li>View changes to: <code>&lt;span&gt;Ted&lt;/span&gt;</code>
+                </li>
+            </ul>
         </section>
-
+    </div>
+</div>
+<div class="slide" id="slide-ObservableArrays">
+    <div>
+        <section>
+            <header>
+                <h2>Observable Arrays</h2>
+            </header>
+            <pre><code>var vm = {</code>
+                 <code>  priests: <mark class="important">new ko.observableArray</mark>(["Dougal", "Ted"]) };</code>
+                 <code>ko.applyBindings(vm);</code></pre>
+            <ul class="inner">
+                <comment class="active"></comment>
+                <li>View: <code>&lt;span&gt;Dougal&lt;/span&gt;</code></li>
+                <li>Set the <code>name</code> observable: <code>vm.name("Ted");</code>
+                <li>View changes to: <code>&lt;span&gt;Ted&lt;/span&gt;</code>
+                </li>
+            </ul>
+        </section>
     </div>
 </div>
 <div class="slide" id="slide5">
