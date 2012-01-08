@@ -13,11 +13,11 @@
         <script type="text/javascript">
             window.onload = function () {
 
-                var vm = { name: "Dougal", occupation: "Priest" };
+                var vm = { name: new ko.observable("Dougal"), occupation: "Priest" };
                 ko.applyBindings(vm);
 
                 clickMe.onclick = function () {
-                    vm.name = "Ted";
+                    vm.name("Ted");
                 }
             };
         </script>
