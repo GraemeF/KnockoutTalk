@@ -49,7 +49,8 @@
                     <h2>What is KnockoutJS?</h2>
                 </header>
                 <ul class="inner">
-                    <li class="active">MVVM for your web browser</li>
+                    <comment class="active"></comment>
+                    <li>MVVM for your web browser</li>
                     <li>Bind UI elements to your models</li>
                 </ul>
             </div>
@@ -67,7 +68,8 @@
                 <h2>What&apos;s MVVM?</h2>
             </header>
             <ul class="inner">
-                <li class="active"><strong>Model</strong><br/>Your domain object</li>
+                <comment class="active"></comment>
+                <li><strong>Model</strong><br/>Your domain object</li>
                 <li><strong>View</strong><br/>UI element that presents your model</li>
                 <li><strong>ViewModel</strong><br/>Maps between Model and View</li>
             </ul>
@@ -81,7 +83,8 @@
                 <h2>MVVM in Knockout</h2>
             </header>
             <ul class="inner">
-                <li class="active"><strong>Model</strong><br/>Server-side domain objects</li>
+                <comment class="active"></comment>
+                <li><strong>Model</strong><br/>Server-side domain objects</li>
                 <li><strong>View</strong><br/>HTML elements that display your model in the page</li>
                 <li><strong>ViewModel</strong><br/>JavaScript object exposing bindable properties and
                     communicating with server via AJAX
@@ -98,12 +101,10 @@
             </header>
             <div class="inner">
                 <div class="active"></div>
-                <div>
-                    <blockquote cite="KnockoutJS.com">By encapsulating data and behavior into a view model, you get a
-                        clean, extensible foundation on which to build sophisticated UIs without getting lost in a
-                        tangle of event handlers and manual DOM updates.
-                    </blockquote>
-                </div>
+                <blockquote cite="KnockoutJS.com">By encapsulating data and behavior into a view model, you get a
+                    clean, extensible foundation on which to build sophisticated UIs without getting lost in a
+                    tangle of event handlers and manual DOM updates.
+                </blockquote>
             </div>
         </section>
     </div>
@@ -115,7 +116,8 @@
                 <h2>Why care?</h2>
             </header>
             <ul class="inner">
-                <li class="active">Separation of concerns</li>
+                <comment class="active"></comment>
+                <li>Separation of concerns</li>
                 <li>Testability</li>
                 <li>Events? What events?</li>
                 <li>Familiarity, at least for me!</li>
@@ -198,10 +200,13 @@
                 <h2>View Models</h2>
             </header>
             <ul class="inner">
-                <li class="active">Any JavaScript object will do:<br/><code>var vm = { name: "Dougal", occupation:
+                <comment class="active"></comment>
+                <li>Any JavaScript object will do:<br/><code>var vm = { name: "Dougal", occupation:
                     "Priest" };</code></li>
                 <li>Bind to properties:<br/><code>&lt;span data-bind=&quot;text: name&quot;&gt;&lt;/span&gt;</code></li>
                 <li>Tell Knockout to bind your DOM elements to the ViewModel:<br/><code>ko.applyBindings(vm);</code>
+                </li>
+                <li>Result:<br/><code>&lt;span&gt;Dougal&lt;/span&gt;</code>
                 </li>
             </ul>
         </section>
