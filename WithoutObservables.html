@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Say Hello</title>
+        <link rel="stylesheet" href="shower/themes/ribbon/styles/style.css">
+    </head>
+    <body>
+        <h2><span data-bind="text: name"> </span></h2>
+        <button id="clickMe" >Click Me!</button>
+
+        <script src="knockout-2.0.0.debug.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+
+                var vm = { name: "Dougal", occupation: "Priest" };
+                ko.applyBindings(vm);
+
+                clickMe.onclick = function () {
+                    vm.name = "Ted";
+                }
+            };
+        </script>
+
+    </body>
+</html>
