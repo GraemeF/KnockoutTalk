@@ -319,8 +319,8 @@
                 <h2>Observables</h2>
             </header>
             <pre><code>var vm = { name: <mark class="important">new ko.observable("Dougal")</mark>,</code>
-                                <code>           occupation: "Priest" };</code>
-                                <code>ko.applyBindings(vm);</code></pre>
+                 <code>           occupation: "Priest" };</code>
+                 <code>ko.applyBindings(vm);</code></pre>
             <ul class="inner">
                 <comment class="active"></comment>
                 <li>View: <code>&lt;span&gt;Dougal&lt;/span&gt;</code></li>
@@ -371,6 +371,39 @@
                 <li>Supports array functions: <code>pop</code>, <code>push</code>, <code>shift</code>, <code>unshift</code>, <code>reverse</code>, <code>sort</code>, <code>splice</code>
                 </li>
             </ul>
+        </section>
+    </div>
+</div>
+<div class="slide" id="slide-ObservableArrays2">
+    <div>
+        <section>
+            <header>
+                <h2>Observable Arrays</h2>
+            </header>
+            <pre><code>var vm = {</code>
+                 <code>  people: new ko.observableArray([</code>
+                 <code>    {name: "Dougal", occupation: "Priest"},</code>
+                 <code>    {name: "Len",    occupation: "Bishop"} ]) };</code>
+                 <code>ko.applyBindings(vm);</code></pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="slide-ObservableArrays3">
+    <div>
+        <section>
+            <header>
+                <h2>Observable Arrays</h2>
+            </header>
+            <div class="inner">
+                <comment class="active"></comment>
+                <pre><code>var vm = {</code>
+                    <code>  people: new ko.observableArray([</code>
+                    <code>    {name: "Dougal", occupation: "Priest"},</code>
+                    <code>    {name: "Len",    occupation: "Bishop"} ]) };</code></pre>
+                <pre><code>&lt;ul data-bind=&quot;<mark class="important">foreach: people</mark>&quot;&gt;</code>
+                    <code>  &lt;li data-bind=&quot;text: name&quot;&gt;&lt;/li&gt;</code>
+                    <code>&lt;/ul&gt;</code></pre>
+            </div>
         </section>
     </div>
 </div>
