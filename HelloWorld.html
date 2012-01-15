@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="shower/themes/ribbon/styles/style.css">
     </head>
     <body>
-        <p>Name: <input data-bind="value: name"/></p>
+        <p>Name: <input data-bind="value: name, valueUpdate: 'afterkeydown'"/></p>
         <h2>Hello, <span data-bind="text: name"> </span>!</h2>
 
         <script src="knockout-2.0.0.debug.js"></script>
