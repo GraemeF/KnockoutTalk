@@ -16,6 +16,9 @@
         body {
             padding-top: 60px;
         }
+        ul.tree {
+            list-style-type: none;
+        }
     </style>
 
 </head>
@@ -37,8 +40,7 @@
     <div class="sidebar">
         <div class="well">
             <h5>Folders</h5>
-            <ul class="unstyled" data-bind="template: { name: 'expandableFolder-template', data: rootFolder }">
-            </ul>
+            <ul class="unstyled" data-bind="template: { name: 'expandableFolder-template', data: rootFolder }"></ul>
         </div>
     </div>
     <div class="content">
@@ -59,15 +61,17 @@
     <span class="divider">/</span>
     <!-- /ko -->
     <li data-bind="css: { active: isActive }">
-        <a href="#" data-bind="text: name"></a>
+        <a href="#" data-bind="text: name, click: activate"></a>
     </li>
 </script>
 
 <script type="text/html" id="expandableFolder-template">
-    <li>
-        <span data-bind="text: name, click: toggleExpanded"></span>
+    <li data-bind="css: { expanded: isExpanded, collapsed: !isExpanded() }">
+        <span data-bind="visible: !isExpanded(), click: expand">&plus;</span>
+        <span data-bind="visible: isExpanded, click: collapse">&minus;</span>
+        <span data-bind="text: name, click: activate"></span>
         <!-- ko if: isExpanded -->
-        <ul data-bind="template: { name: 'expandableFolder-template', foreach: contents }"></ul>
+        <ul class="tree" data-bind="template: { name: 'expandableFolder-template', foreach: contents }"></ul>
         <!-- /ko -->
     </li>
 </script>
