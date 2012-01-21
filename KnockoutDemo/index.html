@@ -16,6 +16,7 @@
         body {
             padding-top: 60px;
         }
+
         ul.tree {
             list-style-type: none;
         }
@@ -52,6 +53,7 @@
 
 <script type="text/html" id="folderContents-template">
     <ul class="breadcrumb" data-bind="template: { name: 'breadcrumb-template' }"></ul>
+    <span data-bind="visible: !contents.loaded()" class="label notice">Loading</span>
     <ul class="unstyled" data-bind="template: { name: 'file-template', foreach: contents }"></ul>
 </script>
 
@@ -71,6 +73,7 @@
         <span data-bind="visible: isExpanded, click: collapse">&minus;</span>
         <span data-bind="text: name, click: activate"></span>
         <!-- ko if: isExpanded -->
+        <span data-bind="visible: !contents.loaded()" class="label notice">Loading</span>
         <ul class="tree" data-bind="template: { name: 'expandableFolder-template', foreach: contents }"></ul>
         <!-- /ko -->
     </li>

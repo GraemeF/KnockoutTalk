@@ -17,11 +17,6 @@ define(["knockout", "knockout-onDemand"], function (ko) {
         this.ensureExpanded();
     };
 
-    Folder.prototype.toggleExpanded = function () {
-        this.isExpanded(!this.isExpanded());
-        this.activate();
-    };
-
     Folder.prototype.expand = function () {
         this.isExpanded(true);
     };
