@@ -4,3 +4,6 @@
 [submodule "KnockoutDemoServer"]
 	path = KnockoutDemoServer
 	url = https://github.com/GraemeF/KnockoutDemoServer.git
+[submodule "bootstrap"]
+	path = bootstrap
+	url = https://github.com/twitter/bootstrap.git

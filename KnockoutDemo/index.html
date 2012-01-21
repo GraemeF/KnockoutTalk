@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <script data-main="scripts/main" src="scripts/libs/require-jquery.js"></script>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="../bootstrap/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="topbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="#">Rock out with your Knockout</a>
+            <ul class="nav">
+                <li class="active"><a href="#">Demo</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="sidebar">
+        <div class="well">
+            <h5>Folders</h5>
+            <ul data-bind="template: { name: 'expandableFolder-template', data: rootFolder }">
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="well" data-bind="template: { name: 'folderContents-template', data: activeFolder }">
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script type="text/html" id="folderContents-template">
+    <h3 data-bind="text: path"></h3>
+    <ul data-bind="template: { name: 'file-template', foreach: contents }"></ul>
+</script>
+
+<script type="text/html" id="expandableFolder-template">
+    <h3>Folder Contents</h3>
+</script>
+
+<script type="text/html" id="file-template">
+    <li data-bind="text: name"></li>
+</script>
+
+</html>
