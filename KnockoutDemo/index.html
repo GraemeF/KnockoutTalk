@@ -37,7 +37,7 @@
     <div class="sidebar">
         <div class="well">
             <h5>Folders</h5>
-            <ul data-bind="template: { name: 'expandableFolder-template', data: rootFolder }">
+            <ul class="unstyled" data-bind="template: { name: 'expandableFolder-template', data: rootFolder }">
             </ul>
         </div>
     </div>
@@ -49,11 +49,18 @@
 </body>
 
 <script type="text/html" id="folderContents-template">
-    <ul class="breadcrumb">
-        <li><a href="#">Home</a> <span class="divider">/</span></li>
-        <li><a href="#" data-bind="text: path" class="active"></a></li>
-    </ul>
+    <ul class="breadcrumb" data-bind="template: { name: 'breadcrumb-template' }"></ul>
     <ul class="unstyled" data-bind="template: { name: 'file-template', foreach: contents }"></ul>
+</script>
+
+<script type="text/html" id="breadcrumb-template">
+    <!-- ko if: parent -->
+    <li data-bind="template: { name: 'breadcrumb-template', data: parent }"></li>
+    <span class="divider">/</span>
+    <!-- /ko -->
+    <li data-bind="css: { active: isActive }">
+        <a href="#" data-bind="text: name"></a>
+    </li>
 </script>
 
 <script type="text/html" id="expandableFolder-template">
