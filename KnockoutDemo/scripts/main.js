@@ -10,6 +10,6 @@ require.config({
 require(["jquery", "knockout", "root", "service"], function ($, ko, Root, Service) {
     $(function () {
         ko.applyBindings(
-            new Root(new Service("http://localhost:3000/")));
+            new Root(new Service("http://localhost:1337/")));
     });
 });
