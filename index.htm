@@ -435,9 +435,25 @@
 <div class="slide" id="slide6.2">
     <div>
         <section>
+            <pre><code>var ViewModel = function () {</code>
+            <code>  var self = this;</code>
+            <code>  this.numbers = ko.observableArray([1, 2, 3]);</code>
+            <code>  this.words = ko.observable(&quot;Total: &quot;);</code>
+            <code>  this.total = <mark class="important">ko.computed</mark>(function () {</code>
+            <code>    var sum = 0;</code>
+            <code>    ko.utils.arrayForEach(self.numbers(), function (x) {</code>
+            <code>      sum += x;</code>
+            <code>    });</code>
+            <code>    return sum;</code>
+            <code>  });</code>
+            <code>  this.output = <mark class="important">ko.computed</mark>(function () {</code>
+            <code>    return self.words() + self.total();</code>
+            <code>  });</code>
+            <code>};</code></pre>
             <header><h2>Computed Observables</h2></header>
             <ul>
-                <li>Automatically tracks dependencies</li>
+                <li>Automatically tracks dependencies between observables</li>
+            <li><strong>MAGIC POWERS</strong></li>
             </ul>
         </section>
     </div>
@@ -454,7 +470,7 @@
 <div class="slide bg" id="slide-bsod">
     <div>
         <section>
-            <img src="pictures/BSOD-FUUUU.png" class="fullslide" alt="">
+            <img src="pictures/bsod.jpg" class="fullslide" alt="">
         </section>
     </div>
 </div>
