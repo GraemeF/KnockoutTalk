@@ -44,16 +44,18 @@
         </div>
     </div>
     <div class="content">
-        <div class="well" data-bind="template: { name: 'folderContents-template', data: activeFolder }">
-        </div>
+        <div class="well" data-bind="template: { name: 'folderContents-template', data: activeFolder }"></div>
     </div>
 </div>
 
 </body>
 
 <script type="text/html" id="folderContents-template">
-    <h3 data-bind="text: path"></h3>
-    <ul data-bind="template: { name: 'file-template', foreach: contents }"></ul>
+    <ul class="breadcrumb">
+      <li><a href="#">Home</a> <span class="divider">/</span></li>
+      <li><a href="#" data-bind="text: path" class="active"></a></li>
+    </ul>
+    <ul class="unstyled" data-bind="template: { name: 'file-template', foreach: contents }"></ul>
 </script>
 
 <script type="text/html" id="expandableFolder-template">
@@ -61,7 +63,7 @@
 </script>
 
 <script type="text/html" id="file-template">
-    <li data-bind="text: name"></li>
+    <li><a data-bind="text: name, click: activate"></a></li>
 </script>
 
 </html>

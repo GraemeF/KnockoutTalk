@@ -7,12 +7,9 @@ require.config({
     }
 });
 
-require(["jquery", "knockout", "root", "service", "folder"], function ($, ko, Root, Service, Folder) {
+require(["jquery", "knockout", "root", "service"], function ($, ko, Root, Service) {
     $(function () {
         ko.applyBindings(
-            new Root(
-                new Folder(
-                    new Service("http://localhost:3000"),
-                    {"name":"", "path":"", "uri":"/"})));
+            new Root(new Service("http://localhost:3000/")));
     });
 });
