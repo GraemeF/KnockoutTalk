@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <title>Demo</title>
     <script data-main="scripts/main" src="scripts/libs/require-jquery.js"></script>
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -52,14 +50,19 @@
 
 <script type="text/html" id="folderContents-template">
     <ul class="breadcrumb">
-      <li><a href="#">Home</a> <span class="divider">/</span></li>
-      <li><a href="#" data-bind="text: path" class="active"></a></li>
+        <li><a href="#">Home</a> <span class="divider">/</span></li>
+        <li><a href="#" data-bind="text: path" class="active"></a></li>
     </ul>
     <ul class="unstyled" data-bind="template: { name: 'file-template', foreach: contents }"></ul>
 </script>
 
 <script type="text/html" id="expandableFolder-template">
-    <h3>Folder Contents</h3>
+    <li>
+        <span data-bind="text: name, click: toggleExpanded"></span>
+        <!-- ko if: isExpanded -->
+        <ul data-bind="template: { name: 'expandableFolder-template', foreach: contents }"></ul>
+        <!-- /ko -->
+    </li>
 </script>
 
 <script type="text/html" id="file-template">
