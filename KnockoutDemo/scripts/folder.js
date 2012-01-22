@@ -16,12 +16,6 @@ define(["knockout", "knockout-onDemand"], function (ko) {
         this.isExpanded(false);
     };
 
-    Folder.prototype.ensureExpanded = function () {
-        this.isExpanded(true);
-        if (this.parent !== null)
-            this.parent.ensureExpanded();
-    };
-
     Folder.prototype.getContents = function () {
         var self = this;
         this.service.getContents(self.path, function (error, data) {
