@@ -54,7 +54,7 @@
 <script type="text/html" id="folderContents-template">
     <ul class="breadcrumb" data-bind="template: { name: 'breadcrumb-template' }"></ul>
     <ul class="unstyled"
-        data-bind="visible: contents.loaded(), template: { name: 'file-template', foreach: contents }"></ul>
+        data-bind="template: { name: 'file-template', foreach: contents }"></ul>
 </script>
 
 <script type="text/html" id="breadcrumb-template">
@@ -64,7 +64,6 @@
     <!-- /ko -->
     <li data-bind="css: { active: isActive }">
         <a href="#" data-bind="text: name, click: activate"></a>
-        <span data-bind="fadeVisible: !contents.loaded()" class="label notice">Loading</span>
     </li>
 </script>
 
@@ -74,9 +73,8 @@
         <span data-bind="visible: isExpanded, click: collapse">&minus;</span>
         <span data-bind="text: name, click: activate"></span>
         <!-- ko if: isExpanded -->
-        <span data-bind="fadeVisible: !contents.loaded()" class="label notice">Loading</span>
         <ul class="tree"
-            data-bind="visible: contents.loaded(), template: { name: 'expandableFolder-template', foreach: contents }"></ul>
+            data-bind="template: { name: 'expandableFolder-template', foreach: contents }"></ul>
         <!-- /ko -->
     </li>
 </script>
