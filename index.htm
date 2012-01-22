@@ -383,10 +383,11 @@
             </header>
             <div class="inner">
                 <pre class="active"><code>&lt;ul</code>
-                    <code> data-bind=&quot;<mark class="important">template: { name: person, foreach: people }</mark>&quot;&gt;</code>
+                    <code> data-bind=&quot;<mark class="important">template: { name: 'person', foreach: people }</mark>&quot;&gt;</code>
                     <code>&lt;/ul&gt;</code></pre>
+                <pre><code>&lt;script type=&quot;text/html&quot; id=&quot;person&quot;&gt;</code>
                     <code>  &lt;li data-bind=&quot;text: name&quot;&gt;&lt;/li&gt;</code>
-                    <code>&lt;/ul&gt;</code></pre>
+                    <code>&lt;/script&gt;</code></pre>
             </div>
         </section>
     </div>
