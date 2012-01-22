@@ -6,30 +6,27 @@
     <link rel="stylesheet" href="shower/themes/ribbon/styles/style.css">
 </head>
 <body>
-<p>Name: <input data-bind="value: name"/></p>
-
-<h2><span data-bind="text: output"></span></h2>
-
+<h2><span data-bind="text: message"></span></h2>
 <script src="knockout-2.0.0.debug.js"></script>
 <script type="text/javascript">
     window.onload = function () {
-var ViewModel = function () {
-    var self = this;
-    this.numbers = ko.observableArray([1, 2, 3]);
-    this.words = ko.observable("Total: ");
-    this.total = ko.computed(function () {
-        var sum = 0;
-        ko.utils.arrayForEach(self.numbers(), function (x) {
-            sum += x;
-        });
-        return sum;
-    });
-    this.output = ko.computed(function () {
-        return self.words() + self.total();
-    });
-};
-
-        ko.applyBindings(new ViewModel());
+        var ViewModel = function () {
+            var self = this;
+            this.numbers = ko.observableArray([1, 2, 3]);
+            this.words = ko.observable("Total: ");
+            this.total = ko.computed(function () {
+                var sum = 0;
+                ko.utils.arrayForEach(self.numbers(), function (x) {
+                    sum += x;
+                });
+                return sum;
+            });
+            this.message = ko.computed(function () {
+                return self.words() + self.total();
+            });
+        };
+        window.vm = new ViewModel();
+        ko.applyBindings(vm);
     };
 </script>
 

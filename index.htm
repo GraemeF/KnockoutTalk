@@ -250,8 +250,7 @@
                 <h2>View Models</h2>
             </header>
             <ul class="inner">
-                <comment class="active"></comment>
-                <li>Any JavaScript object will do:<br/><code>var vm = { name: "Dougal", occupation:
+                <li class="active">Any JavaScript object will do:<br/><code>var vm = { name: "Dougal", occupation:
                     "Priest" };</code></li>
                 <li>Bind to properties:<br/><code>&lt;span data-bind=&quot;text: name&quot;&gt;&lt;/span&gt;</code></li>
                 <li>Tell Knockout to bind your DOM elements to the ViewModel:<br/><code>ko.applyBindings(vm);</code>
@@ -348,8 +347,7 @@
                 <h2>Observables</h2>
             </header>
             <ul class="inner">
-                <comment class="active"></comment>
-                <li>Create with an initial value:<br/><code>var foo = ko.observable(123);</code></li>
+                <li class="active">Create with an initial value:<br/><code>var foo = ko.observable(123);</code></li>
                 <li>Change the value:<br/><code>foo(456);</code></li>
                 <li>Get the current value:<br/><code>foo();  // returns 456</code></li>
             </ul>
@@ -371,20 +369,6 @@
                 <li>Supports array functions: <code>pop</code>, <code>push</code>, <code>shift</code>, <code>unshift</code>, <code>reverse</code>, <code>sort</code>, <code>splice</code>
                 </li>
             </ul>
-        </section>
-    </div>
-</div>
-<div class="slide" id="slide-ObservableArrays2">
-    <div>
-        <section>
-            <header>
-                <h2>Observable Arrays</h2>
-            </header>
-            <pre><code>var vm = {</code>
-                 <code>  people: new ko.observableArray([</code>
-                 <code>    {name: "Dougal", occupation: "Priest"},</code>
-                 <code>    {name: "Len",    occupation: "Bishop"} ]) };</code>
-                 <code>ko.applyBindings(vm);</code></pre>
         </section>
     </div>
 </div>
@@ -413,6 +397,13 @@
             <header>
                 <h2>Templates</h2>
             </header>
+            <div class="inner">
+                <pre class="active"><code>&lt;ul</code>
+                    <code> data-bind=&quot;<mark class="important">template: { name: person, foreach: people }</mark>&quot;&gt;</code>
+                    <code>&lt;/ul&gt;</code></pre>
+                    <code>  &lt;li data-bind=&quot;text: name&quot;&gt;&lt;/li&gt;</code>
+                    <code>&lt;/ul&gt;</code></pre>
+            </div>
         </section>
     </div>
 </div>
@@ -446,10 +437,20 @@
             <code>    });</code>
             <code>    return sum;</code>
             <code>  });</code>
-            <code>  this.output = <mark class="important">ko.computed</mark>(function () {</code>
+            <code>  this.message = <mark class="important">ko.computed</mark>(function () {</code>
             <code>    return self.words() + self.total();</code>
             <code>  });</code>
             <code>};</code></pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="slide-computedDemo">
+    <div>
+        <section>
+            <header>
+                <h2>Computed Observables Demo</h2>
+            </header>
+            <iframe class="demo" src="Computed.html"></iframe>
         </section>
     </div>
 </div>
@@ -466,6 +467,24 @@
     <div>
         <section>
             <img src="pictures/bsod.jpg" class="fullslide" alt="">
+        </section>
+    </div>
+</div>
+<div class="slide" id="slide-whatwehaveseen">
+    <div>
+        <section>
+            <header>
+                <h2>What We've Seen</h2>
+            </header>
+                <ul class="inner">
+                    <comment class="active"></comment>
+                    <li>Bindings: <code>text</code>, <code>click</code>, <code>template</code>, <code>foreach</code>, <code>data</code>, <code>css</code>, <code>visible</code></li>
+                    <li>Comment binding: <code>if</code></li>
+                    <li>Templates</li>
+                    <li>Computed observables<br/></li><br/>
+                    <li>On-demand observable</li>
+                    <li>Custom binding: <code>fadeVisible</code></li>
+                </ul>
         </section>
     </div>
 </div>
