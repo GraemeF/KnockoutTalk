@@ -45,19 +45,24 @@
         </div>
     </div>
     <div class="content">
-        <div class="well">
-            <h5>TODO</h5>
-        </div>
+        <div class="well" data-bind="template: { name: 'folderContents-template', data: activeFolder }"></div>
     </div>
 </div>
 
 </body>
 
+<script type="text/html" id="folderContents-template">
+    <h5 data-bind="text: path"></h5>
+    <ul class="unstyled" data-bind="foreach: contents">
+        <li><a data-bind="text: name, click: activate"></a></li>
+    </ul>
+</script>
+
 <script type="text/html" id="expandableFolder-template">
     <li>
         <span data-bind="visible: !isExpanded(), click: expand">&plus;</span>
         <span data-bind="visible: isExpanded, click: collapse">&minus;</span>
-        <span data-bind="text: name"></span>
+        <span data-bind="text: name, click: activate"></span>
         <!-- ko if: isExpanded -->
         <ul class="tree"
             data-bind="template: { name: 'expandableFolder-template', foreach: contents }"></ul>

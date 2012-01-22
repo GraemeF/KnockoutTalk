@@ -1,11 +1,17 @@
 define(["knockout", "knockout-onDemand"], function (ko) {
-    var Folder = function (service, parent, dto) {
+    var Folder = function (service, activeFolder, parent, dto) {
         this.service = service;
         this.name = dto.name;
         this.path = dto.path;
+        this.activeFolder = activeFolder;
         this.parent = parent;
         this.contents = ko.onDemandObservableArray(this.getContents, this);
         this.isExpanded = ko.observable(false);
+    };
+
+    Folder.prototype.activate = function () {
+        this.activeFolder(this);
+        this.ensureExpanded();
     };
 
     Folder.prototype.expand = function () {
@@ -16,6 +22,12 @@ define(["knockout", "knockout-onDemand"], function (ko) {
         this.isExpanded(false);
     };
 
+    Folder.prototype.ensureExpanded = function () {
+        this.isExpanded(true);
+        if (this.parent !== null)
+            this.parent.ensureExpanded();
+    };
+
     Folder.prototype.getContents = function () {
         var self = this;
         this.service.getContents(self.path, function (error, data) {
@@ -23,7 +35,7 @@ define(["knockout", "knockout-onDemand"], function (ko) {
                 throw error;
 
             self.contents(_.map(data, function (dto) {
-                return new Folder(self.service, self, dto);
+                return new Folder(self.service, self.activeFolder, self, dto);
             }, self));
         });
     };
