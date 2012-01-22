@@ -5,15 +5,6 @@ define(["knockout", "knockout-onDemand"], function (ko) {
         this.path = dto.path;
         this.parent = parent;
         this.contents = ko.onDemandObservableArray(this.getContents, this);
-        this.isExpanded = ko.observable(false);
-    };
-
-    Folder.prototype.expand = function () {
-        this.isExpanded(true);
-    };
-
-    Folder.prototype.collapse = function () {
-        this.isExpanded(false);
     };
 
     Folder.prototype.getContents = function () {
