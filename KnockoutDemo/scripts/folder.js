@@ -4,7 +4,6 @@ define(["knockout", "knockout-onDemand"], function (ko) {
         this.name = dto.name;
         this.path = dto.path;
         this.parent = parent;
-        this.contents = ko.onDemandObservableArray(this.getContents, this);
     };
 
     Folder.prototype.getContents = function () {
@@ -13,9 +12,7 @@ define(["knockout", "knockout-onDemand"], function (ko) {
             if (error !== null)
                 throw error;
 
-            self.contents(_.map(data, function (dto) {
-                return new Folder(self.service, self, dto);
-            }, self));
+            console.log(data);
         });
     };
 
