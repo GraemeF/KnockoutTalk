@@ -53,8 +53,9 @@
 
 <script type="text/html" id="folderContents-template">
     <h5 data-bind="text: path"></h5>
-    <ul class="unstyled"
-        data-bind="template: { name: 'file-template', foreach: contents }"></ul>
+    <ul class="unstyled" data-bind="foreach: contents">
+        <li><a data-bind="text: name, click: activate"></a></li>
+    </ul>
 </script>
 
 <script type="text/html" id="expandableFolder-template">
@@ -67,10 +68,6 @@
             data-bind="template: { name: 'expandableFolder-template', foreach: contents }"></ul>
         <!-- /ko -->
     </li>
-</script>
-
-<script type="text/html" id="file-template">
-    <li><a data-bind="text: name, click: activate"></a></li>
 </script>
 
 </html>
