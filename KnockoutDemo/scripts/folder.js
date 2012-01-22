@@ -7,9 +7,6 @@ define(["knockout", "knockout-onDemand"], function (ko) {
         this.parent = parent;
         this.contents = ko.onDemandObservableArray(this.getContents, this);
         this.isExpanded = ko.observable(false);
-        this.isActive = ko.computed(function () {
-            return this.activeFolder() === this;
-        }, this);
     };
 
     Folder.prototype.activate = function () {

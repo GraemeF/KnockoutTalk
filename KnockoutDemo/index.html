@@ -52,19 +52,9 @@
 </body>
 
 <script type="text/html" id="folderContents-template">
-    <ul class="breadcrumb" data-bind="template: { name: 'breadcrumb-template' }"></ul>
+    <h5 data-bind="text: path"></h5>
     <ul class="unstyled"
         data-bind="template: { name: 'file-template', foreach: contents }"></ul>
-</script>
-
-<script type="text/html" id="breadcrumb-template">
-    <!-- ko if: parent -->
-    <li data-bind="template: { name: 'breadcrumb-template', data: parent }"></li>
-    <span class="divider">/</span>
-    <!-- /ko -->
-    <li data-bind="css: { active: isActive }">
-        <a href="#" data-bind="text: name, click: activate"></a>
-    </li>
 </script>
 
 <script type="text/html" id="expandableFolder-template">
