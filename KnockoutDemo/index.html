@@ -41,15 +41,24 @@
     <div class="sidebar">
         <div class="well">
             <h5>Folders</h5>
+            <ul class="unstyled" data-bind="template: { name: 'expandableFolder-template', data: rootFolder }"></ul>
         </div>
     </div>
     <div class="content">
         <div class="well">
-            <h5>Contents</h5>
+            <h5>TODO</h5>
         </div>
     </div>
 </div>
 
 </body>
+
+<script type="text/html" id="expandableFolder-template">
+    <li>
+        <span data-bind="text: name"></span>
+        <ul class="tree"
+            data-bind="template: { name: 'expandableFolder-template', foreach: contents }"></ul>
+    </li>
+</script>
 
 </html>
